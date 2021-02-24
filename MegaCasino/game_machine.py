@@ -3,7 +3,8 @@ import heapq
 
 
 class GameMachine:
-    # priority queue to avoid iterating machines, while looking for one with enough money to pay the biggest prize
+    # priority queue to avoid iterating machines, while looking for one with
+    # enough money to pay the biggest prize
     all_game_machines_priority_queue = []
     last_machine_index = 0
 
@@ -47,5 +48,6 @@ class GameMachine:
             profit = sum_to_put * duplicates
             self.take_money(profit)
         # add the machine back to the list with new money value
-        heapq.heappush(GameMachine.all_game_machines_priority_queue, (self.get_money() * (-1), self))
+        heapq.heappush(GameMachine.all_game_machines_priority_queue,
+                       (self.get_money() * (-1), self))
         return profit
