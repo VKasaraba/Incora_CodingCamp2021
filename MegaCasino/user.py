@@ -1,5 +1,6 @@
 import heapq
 
+
 from game_machine import GameMachine
 
 
@@ -28,7 +29,8 @@ class User:
             print('There are no game machines created yet')
             return
         # choose machine with the most money from priority queue
-        game_machine = heapq.heappop(GameMachine.all_game_machines_priority_queue)[1]
+        game_machine = \
+            heapq.heappop(GameMachine.all_game_machines_priority_queue)[1]
         # check if machine has enough money to pay the biggest prize
         if game_machine.get_money() >= money * 3:
             self.set_money(self.get_money() - money)
