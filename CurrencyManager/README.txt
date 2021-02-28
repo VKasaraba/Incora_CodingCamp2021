@@ -1,6 +1,9 @@
 -- How to download --
-git clone https://github.com/VKasaraba/Incora_CodingCamp2021/.git
-or download the zip archive and unpack it.
+If pull request was not merged yet, download from develop brach:
+git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git --branch devel>
+Otherwise,
+git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git
+Or download the zip archive and unpack it.
 
 -- Running the tests --
 Open the directory containing unittets_ccy.py file in a terminal and run the command 
