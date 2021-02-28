@@ -1,6 +1,6 @@
 -- How to download --
 If pull request was not merged yet, download from develop brach:
-git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git --branch devel>
+git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git --branch develop
 Otherwise,
 git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git
 Or download the zip archive and unpack it.
