@@ -62,6 +62,21 @@ class TestResult(TestCase):
                                           ).value, 'EUR', 'BGN')),
             str(4*(eur1-usd1)+bgn1/2))
 
+    # check that errors are raised when necessary
+    def test_errors_rising(self):
+        with self.assertRaises(ValueError):
+            Ccy('impostor', 'USD')
+        with self.assertRaises(ValueError):
+            Ccy(1, 'USD') + 'spy'
+        with self.assertRaises(ValueError):
+            usd1 / 0
+        with self.assertRaises(ValueError):
+            eur1 // 0
+        with self.assertRaises(ValueError):
+            1 / usd1
+        with self.assertRaises(ValueError):
+            1 / eur1
+
 
 if __name__ == '__main__':
     unittest.main()
