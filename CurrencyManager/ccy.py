@@ -3,7 +3,7 @@ import operator
 
 
 class Ccy:
-    # queue to display the result in all currencies used by user
+    # queue to display the result in all currencies used by a user
     __currencies_to_display = []
 
     def __init__(self, value, currency: str):
@@ -36,7 +36,7 @@ class Ccy:
         return result
 
     @classmethod
-    def __ariphmetic_helper(cls, param1, param2, operation):
+    def __arithmetic_helper(cls, param1, param2, operation):
         ''' Is used by magic methods for arithmetical operations '''
         # magic functions make sure param1 is always a Ccy object
         cls.__currencies_to_display.append(param1.currency)
@@ -67,37 +67,37 @@ class Ccy:
                 raise ValueError('Args must be numbers or Ccy class objects')
 
     def __add__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.add)
+        return Ccy.__arithmetic_helper(self, other, operator.add)
 
     def __radd__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.add)
+        return Ccy.__arithmetic_helper(self, other, operator.add)
 
     def __sub__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.sub)
+        return Ccy.__arithmetic_helper(self, other, operator.sub)
 
     def __rsub__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.sub) * (-1)
+        return Ccy.__arithmetic_helper(self, other, operator.sub) * (-1)
 
     def __mul__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.mul)
+        return Ccy.__arithmetic_helper(self, other, operator.mul)
 
     def __rmul__(self, other):
-        return Ccy.__ariphmetic_helper(self, other, operator.mul)
+        return Ccy.__arithmetic_helper(self, other, operator.mul)
 
     def __truediv__(self, other):
         try:
-            return Ccy.__ariphmetic_helper(self, other, operator.truediv)
+            return Ccy.__arithmetic_helper(self, other, operator.truediv)
         except ZeroDivisionError:
-            raise ValueError('Cannot devide by zero')
+            raise ValueError('Cannot divide by zero')
 
     def __rtruediv__(self, other):
-        raise ValueError("Doesn't make sense to divide a number by money")
+        raise ValueError("Doesn't make sense to divide a number by money unit")
 
     def __floordiv__(self, other):
         try:
-            return Ccy.__ariphmetic_helper(self, other, operator.floordiv)
+            return Ccy.__arithmetic_helper(self, other, operator.floordiv)
         except ZeroDivisionError:
-            raise ValueError('Cannot devide by zero')
+            raise ValueError('Cannot divide by zero')
 
     def __rfloordiv__(self, other):
-        raise ValueError("Doesn't make sense to divide a number by money")
+        raise ValueError("Doesn't make sense to divide a number by money unit")
