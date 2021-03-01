@@ -6,8 +6,11 @@ git clone https://github.com/VKasaraba/Incora_CodingCamp2021.git
 Or download the zip archive and unpack it.
 
 -- Running the tests --
-Open the directory containing unittets_ccy.py file in a terminal and run the command 
+1. Open the directory containing unittets_ccy.py file in a terminal and run the command 
 "python3 unittets_ccy.py" or run the file explicitly in your IDE.
+
+2. Open the directory containing unittets_currency_converter.py file in a terminal and run the command 
+"python3 unittets_currency_converter.py" or run the file explicitly in your IDE.
 
 -- Project Structure and Classes Explanation --
 1. File ccy.py contains class Ccy, which represents a banknote, as it takes a numeric
