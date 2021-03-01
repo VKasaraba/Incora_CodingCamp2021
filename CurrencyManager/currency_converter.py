@@ -9,6 +9,10 @@ class CurrencyConverter():
 
     @classmethod
     def convert(cls, value: float, from_curr: str, to_curr: str):
+        try:
+            value = float(value)
+        except ValueError:
+            raise ValueError('The value to convert should be a number')
         if from_curr not in cls.__rates or to_curr not in cls.__rates:
             raise ValueError('Invalid currency')
         # Fixer service uses EUR as its base currency, so for conversion
